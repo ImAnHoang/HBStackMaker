@@ -31,9 +31,12 @@ public class CharacterMovement : MonoBehaviour
         Instance = this;
         rb = GetComponent<Rigidbody>();
 
-        load_lv2 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Game/Prefabs/Level2.prefab");
-        
-        load_lv1 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Game/Prefabs/Level.prefab");
+        //load_lv2 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Game/Prefabs/Level2.prefab");
+
+        //load_lv1 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Game/Prefabs/Level.prefab");
+
+        load_lv2 = Resources.Load<GameObject>("Level2");
+        load_lv1 = Resources.Load<GameObject>("Level");
 
         lv1 = Instantiate(load_lv1, Vector3.zero, Quaternion.identity);
     
@@ -45,7 +48,7 @@ public class CharacterMovement : MonoBehaviour
         
     }
 
-
+     
 
     private void FixedUpdate()
     {
